@@ -1,0 +1,2574 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriFit — Eat Better. Move Better. Live Better. | Hazr Studios</title>
+  <meta name="description"
+    content="NutriFit by Hazr Studios is your all-in-one health, nutrition, healthy recipe, workout tracking, meal planning, and wellness platform.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="#home" class="brand-logo" id="brand-logo" aria-label="NutriFit Homepage">
+        <div class="logo-icon-wrap">
+          <svg viewBox="0 0 24 24" class="logo-svg" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 3v18m0-18C7.5 3 4 6.5 4 11c0 6 8 10 8 10s8-4 8-10c0-4.5-3.5-8-8-8z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 11l2 2 4-4" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Nutri<span class="brand-accent">Fit</span></span>
+          <span class="brand-sub">by Hazr Studios</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active" data-nav="home">Home</a></li>
+          <li><a href="#dashboard" class="nav-link" data-nav="dashboard">Dashboard</a></li>
+          <li><a href="#profile" class="nav-link" data-nav="profile">My Profile</a></li>
+          <li><a href="#recipes" class="nav-link" data-nav="recipes">Recipes</a></li>
+          <li><a href="#workouts" class="nav-link" data-nav="workouts">Workouts</a></li>
+          <li><a href="#planner" class="nav-link" data-nav="planner">Meal Planner</a></li>
+          <li><a href="#nutrition" class="nav-link" data-nav="nutrition">Nutrition & Calc</a></li>
+          <li><a href="#journal" class="nav-link" data-nav="journal">Habits & Log</a></li>
+          <li><a href="#blog" class="nav-link" data-nav="blog">Articles</a></li>
+          <li><a href="#about" class="nav-link" data-nav="about">About</a></li>
+          <li><a href="#contact" class="nav-link" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- NutriFit Guide Quick Trigger -->
+        <button id="guide-header-btn" class="guide-header-btn" aria-label="Open NutriFit Guide Chat"
+          title="Open NutriFit Guide Agent">
+          <span class="guide-btn-icon">💬</span>
+          <span class="guide-btn-text">Guide Agent</span>
+          <span class="guide-pulse-dot"></span>
+        </button>
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light mode" title="Toggle theme">
+          <svg class="sun-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path
+              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+          <svg class="moon-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Settings Button -->
+        <button id="settings-btn" class="icon-btn" aria-label="Open settings and preferences" title="Settings & Data">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z">
+            </path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-toggle" class="mobile-toggle icon-btn" aria-label="Toggle navigation menu"
+          aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <ul class="mobile-nav-list">
+        <li><a href="#home" class="mobile-nav-link" data-nav="home">Home</a></li>
+        <li><a href="#dashboard" class="mobile-nav-link" data-nav="dashboard">Dashboard</a></li>
+        <li><a href="#profile" class="mobile-nav-link" data-nav="profile">My Profile</a></li>
+        <li><a href="#recipes" class="mobile-nav-link" data-nav="recipes">Recipes</a></li>
+        <li><a href="#workouts" class="mobile-nav-link" data-nav="workouts">Workouts</a></li>
+        <li><a href="#planner" class="mobile-nav-link" data-nav="planner">Meal Planner</a></li>
+        <li><a href="#nutrition" class="mobile-nav-link" data-nav="nutrition">Nutrition & Calculator</a></li>
+        <li><a href="#journal" class="mobile-nav-link" data-nav="journal">Habits & Journal</a></li>
+        <li><a href="#blog" class="mobile-nav-link" data-nav="blog">Articles & Tips</a></li>
+        <li><a href="#about" class="mobile-nav-link" data-nav="about">About NutriFit</a></li>
+        <li><a href="#contact" class="mobile-nav-link" data-nav="contact">Contact & Support</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <button class="btn btn-outline btn-full" id="mobile-settings-btn">Preferences & Backup</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- SECTION 1: HERO & HOMEPAGE -->
+    <section id="home" class="section hero-section">
+      <div class="hero-bg-glow"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-pill hero-badge">
+            <span class="badge-dot"></span>
+            <span>Crafted by Hazr Studios</span>
+            <span class="badge-sep">•</span>
+            <span>100% Client-Side & Private</span>
+          </div>
+          <h1 class="hero-title">
+            Eat Better. Move Better. <br>
+            <span class="gradient-text">Live Better Every Day.</span>
+          </h1>
+          <p class="hero-desc">
+            Your comprehensive wellness companion. Discover whole-food chef-crafted recipes, personalized macro
+            guidance, structured home workouts, intuitive weekly meal planning, and daily habit tracking—all running
+            locally with zero latency.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#recipes" class="btn btn-primary btn-lg">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+              </svg>
+              Explore Recipes
+            </a>
+            <a href="#workouts" class="btn btn-outline btn-lg">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M18 8h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-4H6a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h4V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4z">
+                </path>
+              </svg>
+              Start Workout
+            </a>
+            <a href="#dashboard" class="btn btn-ghost btn-lg">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              Dashboard
+            </a>
+          </div>
+
+          <!-- Animated Highlights Counter Bar -->
+          <div class="hero-stats-grid">
+            <div class="stat-card">
+              <div class="stat-number" data-target="100">100%</div>
+              <div class="stat-label">Offline & Private</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="stat-recipes-count">16+</div>
+              <div class="stat-label">Whole-Food Recipes</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="stat-workouts-count">12+</div>
+              <div class="stat-label">Targeted Routines</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="stat-streak-display">0 Days</div>
+              <div class="stat-label">Current Streak</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive Preview Card -->
+        <div class="hero-visual">
+          <div class="hero-card glass-card">
+            <div class="hero-card-header">
+              <div class="user-greeting-pill">
+                <div class="avatar-ring">NF</div>
+                <div>
+                  <div class="greeting-time" id="hero-greeting-time">Good morning</div>
+                  <strong class="greeting-user" id="hero-greeting-name">Wellness Explorer</strong>
+                </div>
+              </div>
+              <span class="badge-status online">Live Tracker</span>
+            </div>
+
+            <!-- Quick Day Snapshot Mini Rings -->
+            <div class="hero-snapshot-bars">
+              <div class="snapshot-row">
+                <div class="snapshot-meta">
+                  <span class="snapshot-icon">💧</span>
+                  <span class="snapshot-name">Water Intake</span>
+                  <span class="snapshot-val" id="hero-water-val">0 / 2500 ml</span>
+                </div>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar-fill fill-water" id="hero-water-fill" style="width: 0%;"></div>
+                </div>
+              </div>
+
+              <div class="snapshot-row">
+                <div class="snapshot-meta">
+                  <span class="snapshot-icon">✨</span>
+                  <span class="snapshot-name">Daily Habits</span>
+                  <span class="snapshot-val" id="hero-habits-val">0 / 5 Done</span>
+                </div>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar-fill fill-habits" id="hero-habits-fill" style="width: 0%;"></div>
+                </div>
+              </div>
+
+              <div class="snapshot-row">
+                <div class="snapshot-meta">
+                  <span class="snapshot-icon">🔥</span>
+                  <span class="snapshot-name">Daily Calorie Target</span>
+                  <span class="snapshot-val" id="hero-calories-val">0 / 2000 kcal</span>
+                </div>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar-fill fill-calories" id="hero-calories-fill" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-quick-card-footer">
+              <button class="btn btn-sm btn-primary" onclick="quickLogWater(250)">+250ml Water</button>
+              <a href="#planner" class="btn btn-sm btn-outline">Today's Meals</a>
+              <button class="btn btn-sm btn-ghost" onclick="openRandomRecipeModal()">Surprise Recipe 🎲</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: PERSONALIZED DASHBOARD -->
+    <section id="dashboard" class="section dashboard-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-sub">Personal Wellness Hub</span>
+            <h2 class="section-title">Fitness & Nutrition Dashboard</h2>
+          </div>
+          <div class="section-actions">
+            <button class="btn btn-outline btn-sm" id="dashboard-customize-btn">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 20h9"></path>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+              </svg>
+              Customize Targets
+            </button>
+            <button class="btn btn-ghost btn-sm" id="dashboard-today-refresh-btn" title="Refresh metrics">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+              </svg>
+              Today
+            </button>
+          </div>
+        </div>
+
+        <!-- Dashboard Top 4 Cards Grid -->
+        <div class="dashboard-grid">
+          <!-- Card 1: Hydration Tracker -->
+          <div class="dash-card water-card glass-card">
+            <div class="dash-card-header">
+              <div class="dash-card-title">
+                <span class="card-badge water-badge">💧 Hydration</span>
+                <h3>Water Intake</h3>
+              </div>
+              <span class="dash-card-info" id="water-goal-display">Goal: 2,500 ml</span>
+            </div>
+
+            <div class="water-visual-container">
+              <div class="water-glass" id="water-glass">
+                <div class="water-glass-fill" id="water-glass-fill" style="height: 0%;">
+                  <div class="water-wave"></div>
+                </div>
+                <div class="water-glass-text">
+                  <span class="water-amount-large" id="water-current-text">0</span>
+                  <span class="water-unit">ml</span>
+                </div>
+              </div>
+              <div class="water-percentage-badge" id="water-percent-badge">0%</div>
+            </div>
+
+            <div class="water-controls">
+              <button class="btn btn-sm btn-water" onclick="quickLogWater(250)">+250 ml</button>
+              <button class="btn btn-sm btn-water" onclick="quickLogWater(500)">+500 ml</button>
+              <button class="btn btn-sm btn-outline" onclick="quickLogWater(-250)">-250 ml</button>
+              <button class="btn btn-sm btn-ghost" onclick="resetTodayWater()"
+                title="Reset Today's Water">Reset</button>
+            </div>
+          </div>
+
+          <!-- Card 2: Daily Habits Tracker -->
+          <div class="dash-card habits-card glass-card">
+            <div class="dash-card-header">
+              <div class="dash-card-title">
+                <span class="card-badge habits-badge">✨ Daily Rituals</span>
+                <h3>Habit Tracker</h3>
+              </div>
+              <button class="btn-link" id="add-custom-habit-btn">+ Custom Habit</button>
+            </div>
+
+            <div class="habits-progress-summary">
+              <div class="habits-score" id="habits-score-text">0 of 5 Completed</div>
+              <div class="streak-badge-tag" id="habits-streak-tag">🔥 0-Day Streak</div>
+            </div>
+
+            <div class="habits-list-scroll" id="dashboard-habits-list">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </div>
+
+          <!-- Card 3: Workout & Activity Activity -->
+          <div class="dash-card workout-dash-card glass-card">
+            <div class="dash-card-header">
+              <div class="dash-card-title">
+                <span class="card-badge workout-badge">⚡ Activity</span>
+                <h3>Move & Burn</h3>
+              </div>
+              <div class="dash-card-header-actions">
+                <button class="btn-link" id="dash-log-activity-btn" style="cursor: pointer;">+ Log Activity</button>
+                <a href="#workouts" class="btn-link">Routines</a>
+              </div>
+            </div>
+
+            <div class="activity-metric-tiles">
+              <div class="activity-tile">
+                <div class="activity-tile-icon">⏱️</div>
+                <div class="activity-tile-val" id="dash-active-minutes">0</div>
+                <div class="activity-tile-label">Active Mins</div>
+              </div>
+              <div class="activity-tile">
+                <div class="activity-tile-icon">🔥</div>
+                <div class="activity-tile-val" id="dash-active-calories">0</div>
+                <div class="activity-tile-label">Est. Burn (kcal)</div>
+              </div>
+              <div class="activity-tile">
+                <div class="activity-tile-icon">🏆</div>
+                <div class="activity-tile-val" id="dash-workouts-done">0</div>
+                <div class="activity-tile-label">Sessions</div>
+              </div>
+            </div>
+
+            <div class="dash-quick-workout-cta">
+              <div class="workout-suggestion-text">
+                <strong id="workout-rec-title">Daily Core & Mobility</strong>
+                <p id="workout-rec-desc">Quick 15 min routine to relieve desk fatigue.</p>
+              </div>
+              <button class="btn btn-sm btn-primary" id="dash-start-rec-workout-btn">Start Timer</button>
+            </div>
+          </div>
+
+          <!-- Card 4: Daily Nutrition Target Rings -->
+          <div class="dash-card nutrition-target-card glass-card">
+            <div class="dash-card-header">
+              <div class="dash-card-title">
+                <span class="card-badge nutrition-badge">🥗 Fueling</span>
+                <h3>Target Macros</h3>
+              </div>
+              <a href="#nutrition" class="btn-link">BMR Calculator</a>
+            </div>
+
+            <div class="macro-target-meters">
+              <div class="macro-meter-row">
+                <div class="macro-label-wrap">
+                  <span class="macro-dot protein-dot"></span>
+                  <span class="macro-title">Protein</span>
+                  <span class="macro-numbers" id="macro-protein-display">0 / 120g</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-bar bar-protein" id="bar-protein" style="width: 0%;"></div>
+                </div>
+              </div>
+
+              <div class="macro-meter-row">
+                <div class="macro-label-wrap">
+                  <span class="macro-dot carbs-dot"></span>
+                  <span class="macro-title">Carbohydrates</span>
+                  <span class="macro-numbers" id="macro-carbs-display">0 / 220g</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-bar bar-carbs" id="bar-carbs" style="width: 0%;"></div>
+                </div>
+              </div>
+
+              <div class="macro-meter-row">
+                <div class="macro-label-wrap">
+                  <span class="macro-dot fat-dot"></span>
+                  <span class="macro-title">Healthy Fats</span>
+                  <span class="macro-numbers" id="macro-fat-display">0 / 65g</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-bar bar-fat" id="bar-fat" style="width: 0%;"></div>
+                </div>
+              </div>
+
+              <div class="calories-meter-summary">
+                <span>Daily Calories Planned:</span>
+                <strong id="planned-calories-text">0 kcal</strong>
+                <span class="target-sub" id="target-calories-sub">/ 2,000 target</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Analytics & Weekly Trends Section -->
+        <div class="dashboard-analytics-row">
+          <!-- Canvas Interactive Chart for Hydration & Activity -->
+          <div class="dash-chart-card glass-card">
+            <div class="dash-card-header">
+              <div>
+                <h3>7-Day Wellness Trends</h3>
+                <p class="text-muted text-sm">Visual history of hydration and daily habit completion</p>
+              </div>
+              <div class="chart-legend">
+                <span class="legend-item"><span class="legend-box water-box"></span> Water Intake</span>
+                <span class="legend-item"><span class="legend-box habit-box"></span> Habit %</span>
+              </div>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="weekly-trends-chart" width="700" height="260" aria-label="Weekly Trends Chart"></canvas>
+            </div>
+          </div>
+
+          <!-- Badges & Achievements Locker -->
+          <div class="dash-badges-card glass-card">
+            <div class="dash-card-header">
+              <div>
+                <h3>Milestone Badges</h3>
+                <p class="text-muted text-sm">Earn badges by building consistent habits</p>
+              </div>
+              <span class="badge-count-pill" id="unlocked-badge-count">0 / 6</span>
+            </div>
+            <div class="badges-grid" id="badges-grid-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: MY PROFILE & WELLNESS PASSPORT -->
+    <section id="profile" class="section profile-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-sub">Personal Wellness Passport</span>
+            <h2 class="section-title">My Profile & Lifetime Milestones</h2>
+          </div>
+          <div class="section-actions-wrap">
+            <button class="btn btn-primary btn-sm" id="prof-edit-btn">
+              <span>✏️ Edit Profile</span>
+            </button>
+            <button class="btn btn-outline btn-sm" id="prof-dash-settings-btn">
+              <span>⚙️ Customize Dashboard</span>
+            </button>
+            <button class="btn btn-outline btn-sm" id="prof-storage-btn">
+              <span>💾 Data & Backup</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="profile-layout-grid">
+          <!-- Left Column: Identity & Personal Blueprint -->
+          <div class="profile-col-left">
+            <!-- Identity Card -->
+            <div class="profile-identity-card glass-card">
+              <div class="profile-avatar-wrap">
+                <div class="profile-avatar-initials" id="prof-avatar-initials">WE</div>
+                <span class="avatar-live-dot" title="Active on-device session"></span>
+              </div>
+              <h3 class="profile-name" id="prof-name-display">Wellness Explorer</h3>
+              <p class="profile-meta-sub" id="prof-meta-sub">Member of NutriFit • Local Storage</p>
+
+              <div class="profile-badges-row">
+                <span class="badge-pill" id="prof-dietary-pill">🥗 Balanced</span>
+                <span class="badge-pill" id="prof-fitness-pill">⚡ Intermediate</span>
+                <span class="badge-pill" id="prof-age-pill" style="display: none;">Age: -</span>
+              </div>
+
+              <div class="profile-targets-row">
+                <div class="target-chip">
+                  <span class="target-chip-icon">💧</span>
+                  <div>
+                    <strong id="prof-target-water">2,500 ml</strong>
+                    <small>Daily Water Goal</small>
+                  </div>
+                </div>
+                <div class="target-chip">
+                  <span class="target-chip-icon">🔥</span>
+                  <div>
+                    <strong id="prof-target-cals">2,000 kcal</strong>
+                    <small>Daily Calorie Target</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Allergies & Exclusions notice -->
+              <div class="profile-allergies-box" id="prof-allergies-box">
+                <span class="allergies-box-icon">⚠️</span>
+                <div>
+                  <strong class="text-xs">Allergies & Exclusions:</strong>
+                  <div class="text-xs text-muted" id="prof-allergies-text">None specified</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wellness Goals Card -->
+            <div class="profile-goals-card glass-card">
+              <div class="dash-card-header mb-2">
+                <h4>🎯 My Wellness Goals</h4>
+                <button class="btn-link text-xs" onclick="openSettingsTab('profile')">Edit Goals</button>
+              </div>
+              <p class="text-xs text-muted mb-3">Target milestones guiding your daily recommendations.</p>
+              <div class="goals-tags-container" id="prof-goals-container">
+                <!-- Populated via JS -->
+              </div>
+            </div>
+
+            <!-- Wellness Interests Card -->
+            <div class="profile-interests-card glass-card">
+              <div class="dash-card-header mb-2">
+                <h4>✨ Wellness Interests</h4>
+                <button class="btn-link text-xs" onclick="openSettingsTab('profile')">Edit</button>
+              </div>
+              <div class="interests-tags-container" id="prof-interests-container">
+                <!-- Populated via JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Lifetime Stats, Dashboard Toggles & Storage Status -->
+          <div class="profile-col-right">
+            <!-- Lifetime Activity & Health Metrics Grid -->
+            <div class="profile-stats-card glass-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3>Lifetime Wellness Milestones</h3>
+                  <p class="text-xs text-muted">All-time activity recorded in this browser</p>
+                </div>
+                <span class="badge-status online">Persistent</span>
+              </div>
+
+              <div class="lifetime-stats-grid">
+                <div class="lifetime-stat-item">
+                  <span class="lstat-icon">📅</span>
+                  <div class="lstat-number" id="lstat-days-active">1</div>
+                  <div class="lstat-label">Days Active</div>
+                </div>
+                <div class="lifetime-stat-item">
+                  <span class="lstat-icon">🔥</span>
+                  <div class="lstat-number" id="lstat-streak">0</div>
+                  <div class="lstat-label">Current Streak</div>
+                </div>
+                <div class="lifetime-stat-item">
+                  <span class="lstat-icon">💧</span>
+                  <div class="lstat-number" id="lstat-total-water">0 L</div>
+                  <div class="lstat-label">Water Logged</div>
+                </div>
+                <div class="lifetime-stat-item">
+                  <span class="lstat-icon">⏱️</span>
+                  <div class="lstat-number" id="lstat-active-mins">0m</div>
+                  <div class="lstat-label">Active Movement</div>
+                </div>
+                <div class="lifetime-stat-item">
+                  <span class="lstat-icon">⚡</span>
+                  <div class="lstat-number" id="lstat-total-cals">0</div>
+                  <div class="lstat-label">Calories Burned</div>
+                </div>
+                <div class="lifetime-stat-item">
+                  <span class="lstat-icon">❤️</span>
+                  <div class="lstat-number" id="lstat-fav-recipes">0</div>
+                  <div class="lstat-label">Saved Recipes</div>
+                </div>
+                <div class="lifetime-stat-item">
+                  <span class="lstat-icon">🏋️</span>
+                  <div class="lstat-number" id="lstat-workouts-done">0</div>
+                  <div class="lstat-label">Workouts Finished</div>
+                </div>
+                <div class="lifetime-stat-item">
+                  <span class="lstat-icon">✨</span>
+                  <div class="lstat-number" id="lstat-habits-checked">0</div>
+                  <div class="lstat-label">Habits Checked</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard Customization Panel -->
+            <div class="profile-dash-prefs-card glass-card">
+              <div class="dash-card-header">
+                <div>
+                  <h3>Dashboard Layout Customization</h3>
+                  <p class="text-xs text-muted">Toggle which widgets appear on your Home Dashboard</p>
+                </div>
+                <button class="btn btn-sm btn-outline" id="prof-reset-dash-widgets">Reset Layout</button>
+              </div>
+
+              <div class="dash-widget-toggles-grid">
+                <label class="dash-toggle-row">
+                  <input type="checkbox" id="dash-toggle-water" class="dash-pref-check" checked>
+                  <span class="dash-toggle-label">💧 Hydration Glass Tracker</span>
+                </label>
+                <label class="dash-toggle-row">
+                  <input type="checkbox" id="dash-toggle-habits" class="dash-pref-check" checked>
+                  <span class="dash-toggle-label">✨ Daily Habits & Rituals</span>
+                </label>
+                <label class="dash-toggle-row">
+                  <input type="checkbox" id="dash-toggle-cals" class="dash-pref-check" checked>
+                  <span class="dash-toggle-label">🔥 Calorie & Macro Target Card</span>
+                </label>
+                <label class="dash-toggle-row">
+                  <input type="checkbox" id="dash-toggle-workout" class="dash-pref-check" checked>
+                  <span class="dash-toggle-label">🏋️ Daily Workout Quick-Start</span>
+                </label>
+                <label class="dash-toggle-row">
+                  <input type="checkbox" id="dash-toggle-meals" class="dash-pref-check" checked>
+                  <span class="dash-toggle-label">🥗 Today's Planned Meals</span>
+                </label>
+                <label class="dash-toggle-row">
+                  <input type="checkbox" id="dash-toggle-chart" class="dash-pref-check" checked>
+                  <span class="dash-toggle-label">📊 7-Day Activity Canvas Chart</span>
+                </label>
+                <label class="dash-toggle-row">
+                  <input type="checkbox" id="dash-toggle-badges" class="dash-pref-check" checked>
+                  <span class="dash-toggle-label">🏆 Milestone Achievement Badges</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Storage Health & Data Privacy Card -->
+            <div class="profile-storage-health-card glass-card">
+              <div class="dash-card-header mb-2">
+                <div>
+                  <h4>🔒 Local Storage & Data Integrity</h4>
+                  <p class="text-xs text-muted">Your records live 100% inside this browser sandbox</p>
+                </div>
+                <span class="badge-status online" id="storage-health-badge">Healthy</span>
+              </div>
+
+              <div class="storage-meta-summary">
+                <div class="smeta-item">
+                  <span class="smeta-lbl">Last Saved:</span>
+                  <strong class="smeta-val" id="prof-last-saved-time">Just now</strong>
+                </div>
+                <div class="smeta-item">
+                  <span class="smeta-lbl">Storage Usage:</span>
+                  <strong class="smeta-val" id="prof-storage-size">~38 KB</strong>
+                </div>
+                <div class="smeta-item">
+                  <span class="smeta-lbl">Schema Version:</span>
+                  <strong class="smeta-val">v2.1.0 Namespaced</strong>
+                </div>
+              </div>
+
+              <div class="storage-action-buttons mt-3">
+                <button class="btn btn-outline btn-sm" onclick="exportUserData()">⬇️ Export Full Backup (.json)</button>
+                <button class="btn btn-outline btn-sm" onclick="openSettingsTab('storage')">⚙️ Manage Data &
+                  Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: RECIPE LIBRARY -->
+    <section id="recipes" class="section recipes-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-sub">Nutrient-Dense Kitchen</span>
+            <h2 class="section-title">Healthy Recipe Discovery</h2>
+          </div>
+          <div class="section-actions-wrap">
+            <button class="btn btn-outline btn-sm" id="random-recipe-btn">
+              <span>🎲 Surprise Recipe</span>
+            </button>
+            <button class="btn btn-outline btn-sm" id="fridge-search-btn">
+              <span>🍳 What's in My Fridge?</span>
+            </button>
+            <button class="btn btn-primary btn-sm" id="create-recipe-btn">
+              <span>➕ Custom Recipe</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Search & Dietary Filters Bar -->
+        <div class="filter-controls-card glass-card">
+          <div class="search-input-wrap">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="recipe-search-input" class="search-input"
+              placeholder="Search by recipe title, main ingredient (e.g., salmon, quinoa, avocado)..."
+              aria-label="Search recipes">
+            <button class="btn-clear-search" id="clear-recipe-search" title="Clear search"
+              style="display: none;">&times;</button>
+          </div>
+
+          <!-- Dietary Filter Pills -->
+          <div class="filter-pills-row" id="recipe-filter-pills" role="tablist" aria-label="Recipe categories">
+            <button class="filter-pill active" data-filter="all">All Recipes</button>
+            <button class="filter-pill" data-filter="breakfast">Breakfast</button>
+            <button class="filter-pill" data-filter="lunch">Lunch</button>
+            <button class="filter-pill" data-filter="dinner">Dinner</button>
+            <button class="filter-pill" data-filter="snack">Snacks</button>
+            <button class="filter-pill" data-filter="high-protein">High-Protein</button>
+            <button class="filter-pill" data-filter="vegetarian">Vegetarian</button>
+            <button class="filter-pill" data-filter="vegan">Vegan</button>
+            <button class="filter-pill" data-filter="gluten-free">Gluten-Free</button>
+            <button class="filter-pill" data-filter="favorites">❤️ Favorites (<span
+                id="fav-count-pill">0</span>)</button>
+          </div>
+
+          <!-- Secondary Time & Difficulty Filters -->
+          <div class="recipe-secondary-filters-row">
+            <div class="filter-subgroup">
+              <span class="subgroup-label">⏱️ Time:</span>
+              <div class="filter-mini-pills" id="recipe-time-filters">
+                <button class="filter-mini-pill active" data-time="all">Any</button>
+                <button class="filter-mini-pill" data-time="quick">&lt; 20m</button>
+                <button class="filter-mini-pill" data-time="medium">20–40m</button>
+                <button class="filter-mini-pill" data-time="long">40m+</button>
+              </div>
+            </div>
+
+            <div class="filter-subgroup">
+              <span class="subgroup-label">🍳 Level:</span>
+              <div class="filter-mini-pills" id="recipe-diff-filters">
+                <button class="filter-mini-pill active" data-rdiff="all">All</button>
+                <button class="filter-mini-pill" data-rdiff="easy">Easy</button>
+                <button class="filter-mini-pill" data-rdiff="medium">Medium</button>
+                <button class="filter-mini-pill" data-rdiff="advanced">Advanced</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recently Viewed Recipes Strip -->
+        <div class="recently-viewed-card glass-card" id="recently-viewed-container" style="display: none;">
+          <div class="recently-viewed-header">
+            <span class="text-xs font-medium text-muted uppercase">👀 Recently Viewed</span>
+            <button class="btn-link text-xs" id="clear-recent-recipes-btn">Clear</button>
+          </div>
+          <div class="recently-viewed-list" id="recently-viewed-list">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- Fridge Ingredient Matcher Drawer (collapsible) -->
+        <div class="fridge-search-drawer glass-card" id="fridge-drawer" style="display: none;">
+          <div class="fridge-drawer-header">
+            <div>
+              <h4>🍳 Fridge Ingredient Matcher</h4>
+              <p class="text-sm text-muted">Select ingredients you currently have on hand to find matching recipes:</p>
+            </div>
+            <button class="btn-close-sm" id="close-fridge-drawer">&times;</button>
+          </div>
+          <div class="fridge-tags-container" id="fridge-ingredients-list">
+            <!-- Common ingredients populated via JS -->
+          </div>
+          <div class="fridge-drawer-footer">
+            <span id="fridge-match-status" class="text-sm font-medium">0 ingredients selected</span>
+            <button class="btn btn-sm btn-ghost" id="clear-fridge-tags">Reset Tags</button>
+          </div>
+        </div>
+
+        <!-- Active Search / Filter Stats Bar -->
+        <div class="results-stats-bar">
+          <span id="recipes-results-count" class="results-count-text">Showing 16 recipes</span>
+          <div class="recipe-sort-wrap">
+            <label for="recipe-sort-select" class="text-sm text-muted">Sort by:</label>
+            <select id="recipe-sort-select" class="form-select-sm">
+              <option value="recommended">NutriFit Recommended</option>
+              <option value="time-asc">Quickest Prep Time</option>
+              <option value="protein-desc">Highest Protein</option>
+              <option value="cal-asc">Lowest Calories</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Recipe Cards Grid -->
+        <div class="recipe-cards-grid" id="recipes-grid">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Empty State (hidden by default) -->
+        <div class="empty-state-card glass-card" id="recipes-empty-state" style="display: none;">
+          <div class="empty-icon">🥗</div>
+          <h3>No matching recipes found</h3>
+          <p class="text-muted">Try adjusting your search terms or clearing your dietary filters.</p>
+          <button class="btn btn-outline" id="reset-recipe-filters-btn">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: WORKOUT LIBRARY -->
+    <section id="workouts" class="section workouts-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-sub">Functional Movement</span>
+            <h2 class="section-title">Workout Library & Timer</h2>
+          </div>
+          <div class="section-actions-wrap">
+            <button class="btn btn-outline btn-sm" id="view-workout-history-btn">
+              <span>📜 History Log (<span id="history-count-badge">0</span>)</span>
+            </button>
+            <button class="btn btn-primary btn-sm" id="create-workout-btn">
+              <span>➕ Custom Routine</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Workout Category Pills -->
+        <div class="filter-controls-card glass-card">
+          <div class="filter-pills-row" id="workout-category-pills" role="tablist">
+            <button class="filter-pill active" data-wfilter="all">All Routines</button>
+            <button class="filter-pill" data-wfilter="strength">Strength</button>
+            <button class="filter-pill" data-wfilter="hiit">HIIT & Cardio</button>
+            <button class="filter-pill" data-wfilter="mobility">Mobility & Stretch</button>
+            <button class="filter-pill" data-wfilter="home">Home / No Equipment</button>
+            <button class="filter-pill" data-wfilter="quick">Quick (< 20 min)</button>
+          </div>
+
+          <div class="workout-filter-secondary">
+            <div class="search-input-wrap search-sm">
+              <input type="search" id="workout-search-input" class="search-input"
+                placeholder="Search routines or target muscle..." aria-label="Search workouts">
+            </div>
+            <div class="difficulty-filter-wrap">
+              <label for="workout-diff-select" class="text-sm text-muted">Level:</label>
+              <select id="workout-diff-select" class="form-select-sm">
+                <option value="all">All Levels</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workout Cards Grid -->
+        <div class="workout-cards-grid" id="workouts-grid">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Workout Empty State -->
+        <div class="empty-state-card glass-card" id="workouts-empty-state" style="display: none;">
+          <div class="empty-icon">🏋️</div>
+          <h3>No matching routines found</h3>
+          <p class="text-muted">Adjust your filter choices or create your own custom workout.</p>
+          <button class="btn btn-outline" id="reset-workout-filters-btn">Show All Workouts</button>
+        </div>
+
+        <!-- Recovery & Stretching Guidance Card -->
+        <div class="workout-recovery-card glass-card mt-4">
+          <div class="recovery-header">
+            <span class="card-badge workout-badge">🌿 Rest & Repair</span>
+            <h3>Recovery, Stretching & Muscular Longevity</h3>
+            <p class="text-sm text-muted">Movement creates the stimulus, but rest builds the adaptation. Follow these
+              guidelines post-workout:</p>
+          </div>
+          <div class="recovery-protocols-grid">
+            <div class="protocol-item">
+              <span class="protocol-icon">🫁</span>
+              <div>
+                <strong>Down-Regulate Nervous System</strong>
+                <p class="text-xs text-muted">Spend 3–5 minutes doing box breathing (4s in, 4s hold, 4s out, 4s hold)
+                  immediately after high intensity to flip from sympathetic to parasympathetic repair mode.</p>
+              </div>
+            </div>
+
+            <div class="protocol-item">
+              <span class="protocol-icon">💧</span>
+              <div>
+                <strong>Electrolyte & Water Rehydration</strong>
+                <p class="text-xs text-muted">Drink 500ml of water with a pinch of unrefined sea salt or coconut water
+                  to replenish cellular sodium and potassium lost during sweating.</p>
+              </div>
+            </div>
+
+            <div class="protocol-item">
+              <span class="protocol-icon">🧘</span>
+              <div>
+                <strong>Static Hip & Thoracic Releases</strong>
+                <p class="text-xs text-muted">Hold static stretches (hip flexors, hamstrings, pecs) for 45–60 seconds
+                  after your workout when muscles are warm, never before explosive movements.</p>
+              </div>
+            </div>
+
+            <div class="protocol-item">
+              <span class="protocol-icon">🌙</span>
+              <div>
+                <strong>Deep Sleep & Growth Hormone</strong>
+                <p class="text-xs text-muted">Over 90% of exercise-induced human growth hormone (HGH) secretion occurs
+                  during stage 3 and 4 slow-wave sleep. Prioritize a cool, dark room.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: INTERACTIVE MEAL PLANNER & SHOPPING LIST -->
+    <section id="planner" class="section planner-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-sub">Smart Meal Prep</span>
+            <h2 class="section-title">Weekly Meal Planner & Smart Shopping List</h2>
+          </div>
+          <div class="section-actions-wrap">
+            <div class="planner-view-toggle">
+              <button class="btn btn-sm btn-outline active" id="tab-btn-planner" data-view="planner">Weekly
+                Calendar</button>
+              <button class="btn btn-sm btn-outline" id="tab-btn-shopping" data-view="shopping">
+                Shopping List (<span id="shopping-item-count">0</span>)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subview 1: Weekly Planner Calendar -->
+        <div id="planner-calendar-view" class="planner-subview">
+          <!-- Day Navigator Bar -->
+          <div class="planner-days-bar glass-card">
+            <div class="planner-week-nav">
+              <button class="btn btn-icon-round" id="planner-prev-day" title="Previous Day">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <div class="planner-days-scroll" id="planner-day-pills">
+                <!-- Days Mon - Sun generated via JS -->
+              </div>
+              <button class="btn btn-icon-round" id="planner-next-day" title="Next Day">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Planner Day Action Toolbar -->
+            <div class="planner-toolbar">
+              <div class="day-nutrition-chip">
+                <span>Daily Total:</span>
+                <strong id="day-total-cals">0 kcal</strong>
+                <span class="chip-macros" id="day-total-macros">P: 0g | C: 0g | F: 0g</span>
+              </div>
+              <div class="planner-toolbar-buttons">
+                <button class="btn btn-sm btn-outline" id="duplicate-day-btn"
+                  title="Copy this day's meal plan to another day">
+                  📋 Copy Day
+                </button>
+                <button class="btn btn-sm btn-primary" id="generate-shopping-btn"
+                  title="Extract all ingredients from this week into shopping list">
+                  🛒 Generate Shopping List
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meal Slots for the Selected Day -->
+          <div class="meal-slots-grid">
+            <!-- Breakfast Slot -->
+            <div class="meal-slot-card glass-card" data-slot="breakfast">
+              <div class="slot-header">
+                <div class="slot-title">
+                  <span class="slot-emoji">🍳</span>
+                  <h4>Breakfast</h4>
+                </div>
+                <button class="btn-add-meal" onclick="openAddMealModal('breakfast')">+ Add Meal</button>
+              </div>
+              <div class="slot-items-list" id="slot-items-breakfast">
+                <div class="slot-empty">No breakfast planned yet.</div>
+              </div>
+            </div>
+
+            <!-- Lunch Slot -->
+            <div class="meal-slot-card glass-card" data-slot="lunch">
+              <div class="slot-header">
+                <div class="slot-title">
+                  <span class="slot-emoji">🥗</span>
+                  <h4>Lunch</h4>
+                </div>
+                <button class="btn-add-meal" onclick="openAddMealModal('lunch')">+ Add Meal</button>
+              </div>
+              <div class="slot-items-list" id="slot-items-lunch">
+                <div class="slot-empty">No lunch planned yet.</div>
+              </div>
+            </div>
+
+            <!-- Dinner Slot -->
+            <div class="meal-slot-card glass-card" data-slot="dinner">
+              <div class="slot-header">
+                <div class="slot-title">
+                  <span class="slot-emoji">🍲</span>
+                  <h4>Dinner</h4>
+                </div>
+                <button class="btn-add-meal" onclick="openAddMealModal('dinner')">+ Add Meal</button>
+              </div>
+              <div class="slot-items-list" id="slot-items-dinner">
+                <div class="slot-empty">No dinner planned yet.</div>
+              </div>
+            </div>
+
+            <!-- Snacks Slot -->
+            <div class="meal-slot-card glass-card" data-slot="snack">
+              <div class="slot-header">
+                <div class="slot-title">
+                  <span class="slot-emoji">🥑</span>
+                  <h4>Snacks & Fuel</h4>
+                </div>
+                <button class="btn-add-meal" onclick="openAddMealModal('snack')">+ Add Snack</button>
+              </div>
+              <div class="slot-items-list" id="slot-items-snack">
+                <div class="slot-empty">No snacks planned yet.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subview 2: Smart Categorized Shopping List -->
+        <div id="planner-shopping-view" class="planner-subview" style="display: none;">
+          <div class="shopping-container glass-card">
+            <div class="shopping-header">
+              <div>
+                <h3>Smart Grocery & Shopping List</h3>
+                <p class="text-muted text-sm">Automatically compiled from your planned meals or manually added.</p>
+              </div>
+              <div class="shopping-actions">
+                <button class="btn btn-sm btn-outline" id="print-shopping-btn">🖨️ Print List</button>
+                <button class="btn btn-sm btn-outline" id="clear-checked-shopping-btn">Clear Checked</button>
+                <button class="btn btn-sm btn-ghost" id="clear-all-shopping-btn">Clear All</button>
+              </div>
+            </div>
+
+            <!-- Add Custom Shopping Item Bar -->
+            <form id="add-shopping-item-form" class="shopping-add-form">
+              <input type="text" id="custom-item-name" class="form-control"
+                placeholder="Item name (e.g. Almond milk, Greek yogurt)..." required>
+              <input type="text" id="custom-item-qty" class="form-control" placeholder="Qty (e.g. 1 carton, 500g)"
+                style="max-width: 160px;">
+              <select id="custom-item-cat" class="form-select" style="max-width: 170px;">
+                <option value="Produce">Produce 🥦</option>
+                <option value="Protein & Dairy">Protein & Dairy 🥚</option>
+                <option value="Pantry & Grains">Pantry & Grains 🌾</option>
+                <option value="Spices & Oils">Spices & Oils 🫒</option>
+                <option value="Other">Other 🛒</option>
+              </select>
+              <button type="submit" class="btn btn-primary">+ Add Item</button>
+            </form>
+
+            <!-- Categorized Shopping Items -->
+            <div class="shopping-categories-wrap" id="shopping-categories-container">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div class="empty-state-card" id="shopping-empty-state" style="display: none;">
+              <div class="empty-icon">🛒</div>
+              <h4>Your shopping list is empty</h4>
+              <p class="text-muted">Generate items from your weekly meal plan above or add custom ingredients.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: NUTRITION GUIDES & INTERACTIVE CALCULATOR -->
+    <section id="nutrition" class="section nutrition-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-sub">Evidence-Based Wellness</span>
+            <h2 class="section-title">Nutrition Education & Calorie / Macro Calculator</h2>
+          </div>
+        </div>
+
+        <div class="nutrition-layout-grid">
+          <!-- Column 1: Interactive BMR, TDEE & Macro Calculator -->
+          <div class="nutrition-calc-card glass-card">
+            <div class="calc-card-header">
+              <span class="card-badge nutrition-badge">🧮 Personalized Science</span>
+              <h3>BMR, TDEE & Macro Target Calculator</h3>
+              <p class="text-sm text-muted">
+                Calculate your Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE) using the
+                scientifically validated Mifflin-St Jeor formula.
+              </p>
+            </div>
+
+            <form id="nutrition-calc-form" class="calc-form">
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="calc-gender">Biological Gender</label>
+                  <select id="calc-gender" class="form-select">
+                    <option value="male">Male</option>
+                    <option value="female" selected>Female</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="calc-age">Age (years)</label>
+                  <input type="number" id="calc-age" class="form-control" value="28" min="15" max="100" required>
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="calc-weight">Weight (kg)</label>
+                  <input type="number" id="calc-weight" class="form-control" value="68" min="30" max="250" step="0.5"
+                    required>
+                </div>
+                <div class="form-group">
+                  <label for="calc-height">Height (cm)</label>
+                  <input type="number" id="calc-height" class="form-control" value="168" min="100" max="230" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="calc-activity">Daily Activity Level</label>
+                <select id="calc-activity" class="form-select">
+                  <option value="1.2">Sedentary (desk job, minimal exercise)</option>
+                  <option value="1.375" selected>Lightly Active (light exercise 1–3 days/wk)</option>
+                  <option value="1.55">Moderately Active (moderate exercise 3–5 days/wk)</option>
+                  <option value="1.725">Very Active (hard exercise 6–7 days/wk)</option>
+                  <option value="1.9">Extremely Active (athlete / physical job)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="calc-goal">Primary Goal</label>
+                <select id="calc-goal" class="form-select">
+                  <option value="maintain">Maintain Current Weight & Energy</option>
+                  <option value="deficit" selected>Sustainable Fat Loss (-15% moderate deficit)</option>
+                  <option value="surplus">Lean Muscle Growth (+10% lean surplus)</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">Compute Nutrition Blueprint</button>
+            </form>
+
+            <!-- Calculation Output Display -->
+            <div class="calc-results-panel" id="calc-results" style="display: none;">
+              <h4 class="calc-results-title">Your Estimated Daily Needs:</h4>
+              <div class="calc-results-grid">
+                <div class="result-tile">
+                  <span class="result-label">Basal Metabolic Rate</span>
+                  <strong class="result-value" id="res-bmr">1,420 kcal</strong>
+                  <span class="result-sub">Resting energy</span>
+                </div>
+                <div class="result-tile highlight">
+                  <span class="result-label">Target Daily Intake</span>
+                  <strong class="result-value" id="res-tdee">1,660 kcal</strong>
+                  <span class="result-sub" id="res-goal-sub">Sustainable Fat Loss</span>
+                </div>
+              </div>
+
+              <div class="calc-macros-split">
+                <h5>Target Macro Distribution:</h5>
+                <div class="split-bars-row">
+                  <div class="split-pill split-protein">
+                    <span>Protein</span>
+                    <strong id="res-protein">125g</strong>
+                    <small>30% (500 kcal)</small>
+                  </div>
+                  <div class="split-pill split-carbs">
+                    <span>Carbs</span>
+                    <strong id="res-carbs">165g</strong>
+                    <small>40% (660 kcal)</small>
+                  </div>
+                  <div class="split-pill split-fat">
+                    <span>Fats</span>
+                    <strong id="res-fat">55g</strong>
+                    <small>30% (500 kcal)</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hydration-recommendation">
+                <span>💧 Baseline Water Target: <strong id="res-water">2,400 ml/day</strong></span>
+              </div>
+
+              <button class="btn btn-sm btn-outline btn-full" id="apply-calc-to-dash-btn">
+                Apply to My Daily Dashboard Targets
+              </button>
+            </div>
+
+            <div class="disclaimer-note">
+              <span class="note-icon">ℹ️</span>
+              <p>
+                <strong>Educational estimate:</strong> Calculations are approximations based on empirical nutritional
+                science and the Mifflin-St Jeor equation. Consult a licensed dietitian or physician for personalized
+                clinical prescriptions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 2: Nutrition Knowledge Guides & Food Substitutions -->
+          <div class="nutrition-guides-col">
+            <!-- Nutrition Fundamentals Card -->
+            <div class="guide-card glass-card">
+              <h3>The 4 Pillars of Balanced Eating</h3>
+              <div class="pillars-accordion" id="pillars-accordion">
+                <!-- Pillar 1 -->
+                <div class="accordion-item active">
+                  <button class="accordion-header" aria-expanded="true">
+                    <span>🍗 Quality Protein & Satiety</span>
+                    <span class="acc-chevron">▾</span>
+                  </button>
+                  <div class="accordion-body">
+                    <p>Protein provides essential amino acids needed for muscle synthesis, immune defense, and satiety
+                      hormones like peptide YY. Prioritize lean poultry, wild salmon, eggs, tofu, tempeh, and Greek
+                      yogurt.</p>
+                    <div class="tip-badge">Tip: Aim for 25–35g per main meal to trigger muscle protein synthesis.</div>
+                  </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <span>🌾 Complex Carbohydrates & Prebiotic Fiber</span>
+                    <span class="acc-chevron">▾</span>
+                  </button>
+                  <div class="accordion-body">
+                    <p>Complex carbs (sweet potatoes, oats, quinoa, berries, legumes) deliver sustained glucose release
+                      without sharp insulin spikes. Dietary fiber fuels beneficial gut microbiota and supports
+                      cholesterol regulation.</p>
+                    <div class="tip-badge">Tip: Aim for at least 28–35g of total dietary fiber per day.</div>
+                  </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <span>🥑 Essential Fatty Acids</span>
+                    <span class="acc-chevron">▾</span>
+                  </button>
+                  <div class="accordion-body">
+                    <p>Monounsaturated and omega-3 polyunsaturated fats (extra virgin olive oil, avocados, chia seeds,
+                      walnuts) protect cardiovascular health, facilitate fat-soluble vitamin absorption (A, D, E, K),
+                      and regulate cell signaling.</p>
+                  </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <span>✋ Hand-Based Portion Control Guide</span>
+                    <span class="acc-chevron">▾</span>
+                  </button>
+                  <div class="accordion-body">
+                    <ul class="guide-bullets">
+                      <li><strong>Palm:</strong> 1 portion of protein (~20-30g)</li>
+                      <li><strong>Fist:</strong> 1 portion of dense vegetables</li>
+                      <li><strong>Cupped Hand:</strong> 1 portion of carbohydrate foods</li>
+                      <li><strong>Thumb:</strong> 1 portion of healthy dietary fats / oils</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Healthy Food Substitutions Search Card -->
+            <div class="guide-card glass-card">
+              <div class="substitutions-header">
+                <div>
+                  <h3>Smart Food Substitutions</h3>
+                  <p class="text-sm text-muted">Nutrient-dense swaps for everyday cooking</p>
+                </div>
+                <input type="text" id="sub-search-input" class="search-input search-xs"
+                  placeholder="Filter swaps (e.g. rice, sugar, cream)..." aria-label="Search food swaps">
+              </div>
+
+              <div class="subs-table-wrap">
+                <table class="subs-table" id="subs-table">
+                  <thead>
+                    <tr>
+                      <th>Traditional Ingredient</th>
+                      <th>NutriFit Smart Swap</th>
+                      <th>Health Advantage</th>
+                    </tr>
+                  </thead>
+                  <tbody id="subs-table-body">
+                    <!-- Populated via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: WELLNESS JOURNAL & HABIT LOGGING -->
+    <section id="journal" class="section journal-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-sub">Holistic Lifestyle</span>
+            <h2 class="section-title">Habit Streaks & Wellness Journal</h2>
+          </div>
+        </div>
+
+        <div class="journal-layout-grid">
+          <!-- Daily Mood, Sleep & Energy Logging Card -->
+          <div class="journal-entry-card glass-card">
+            <h3>Daily Mind & Body Check-In</h3>
+            <p class="text-sm text-muted">Acknowledge your energy levels and sleep patterns to understand your
+              biological rhythm.</p>
+
+            <form id="daily-checkin-form" class="checkin-form">
+              <!-- Date selector -->
+              <div class="form-group">
+                <label for="checkin-date">Log Date</label>
+                <input type="date" id="checkin-date" class="form-control" required>
+              </div>
+
+              <!-- Mood Selector -->
+              <div class="form-group">
+                <label>Overall Mood Today</label>
+                <div class="mood-selectors-row" id="mood-selectors">
+                  <button type="button" class="mood-btn" data-mood="energetic" title="Energetic">⚡ Energized</button>
+                  <button type="button" class="mood-btn active" data-mood="peaceful" title="Calm & Balanced">🌿
+                    Calm</button>
+                  <button type="button" class="mood-btn" data-mood="happy" title="Happy">😊 Happy</button>
+                  <button type="button" class="mood-btn" data-mood="tired" title="Tired">😴 Fatigued</button>
+                  <button type="button" class="mood-btn" data-mood="stressed" title="Stressed">🌪️ Stressed</button>
+                </div>
+              </div>
+
+              <!-- Energy Level Slider -->
+              <div class="form-group">
+                <div class="slider-label-row">
+                  <label for="energy-slider">Energy Level</label>
+                  <strong id="energy-val-display">8 / 10</strong>
+                </div>
+                <input type="range" id="energy-slider" min="1" max="10" value="8" class="form-range">
+              </div>
+
+              <!-- Sleep Metrics -->
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="sleep-hours">Sleep Duration (hrs)</label>
+                  <input type="number" id="sleep-hours" class="form-control" value="7.5" step="0.5" min="2" max="14"
+                    required>
+                </div>
+                <div class="form-group">
+                  <label for="sleep-quality">Sleep Quality</label>
+                  <select id="sleep-quality" class="form-select">
+                    <option value="5">⭐⭐⭐⭐⭐ Deep & Restorative</option>
+                    <option value="4" selected>⭐⭐⭐⭐ Good & Refreshed</option>
+                    <option value="3">⭐⭐⭐ Moderate</option>
+                    <option value="2">⭐⭐ Restless</option>
+                    <option value="1">⭐ Poor / Fragmented</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Notes / Reflections -->
+              <div class="form-group">
+                <label for="journal-notes">Daily Wellness Reflection & Gratitude</label>
+                <textarea id="journal-notes" class="form-control" rows="3"
+                  placeholder="What went well today? What nourished your body? Any workout reflections or dietary wins?"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">Save Daily Check-In</button>
+            </form>
+          </div>
+
+          <!-- Journal History List -->
+          <div class="journal-history-card glass-card">
+            <div class="dash-card-header">
+              <div>
+                <h3>Recent Reflections</h3>
+                <p class="text-sm text-muted">Your logged wellness insights over time</p>
+              </div>
+              <button class="btn btn-sm btn-ghost" id="export-journal-btn">Export Log</button>
+            </div>
+
+            <div class="journal-entries-list" id="journal-entries-container">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div class="empty-state-card" id="journal-empty-state" style="display: none;">
+              <div class="empty-icon">📖</div>
+              <h4>No journal entries yet</h4>
+              <p class="text-muted">Take a moment to record your mood, sleep, and nutrition reflection today.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: BLOG & EDUCATIONAL ARTICLES -->
+    <section id="blog" class="section blog-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-sub">NutriFit Library</span>
+            <h2 class="section-title">Health, Nutrition & Fitness Articles</h2>
+          </div>
+        </div>
+
+        <!-- Blog Filters -->
+        <div class="filter-controls-card glass-card">
+          <div class="filter-pills-row" id="blog-category-pills" role="tablist">
+            <button class="filter-pill active" data-bfilter="all">All Articles</button>
+            <button class="filter-pill" data-bfilter="nutrition">Nutrition Science</button>
+            <button class="filter-pill" data-bfilter="fitness">Workout Training</button>
+            <button class="filter-pill" data-bfilter="habits">Habits & Mindset</button>
+            <button class="filter-pill" data-bfilter="sleep">Sleep & Recovery</button>
+            <button class="filter-pill" data-bfilter="bookmarks">🔖 Saved Articles (<span
+                id="blog-bookmarks-count">0</span>)</button>
+          </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="blog-cards-grid" id="blog-grid">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: ABOUT NUTRIFIT BY HAZR STUDIOS -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-sub">Our Philosophy</span>
+            <h2 class="section-title">About NutriFit by Hazr Studios</h2>
+          </div>
+        </div>
+
+        <div class="about-hero-card glass-card mb-4">
+          <div class="about-hero-text">
+            <div class="badge-pill mb-2">
+              <span>Crafted with care by Hazr Studios</span>
+              <span class="badge-sep">•</span>
+              <span>Eat Better. Move Better. Live Better.</span>
+            </div>
+            <h3 class="about-lead">A Sanctuary for Sustainable, Private Health & Fitness</h3>
+            <p class="text-secondary">
+              NutriFit was engineered by <strong>Hazr Studios</strong> with a singular mission: to make evidence-based
+              wellness, wholesome cooking, and daily movement effortless, joyful, and completely private. We reject
+              extreme, dangerous fad diets and invasive cloud databases. Instead, we deliver a lightning-fast,
+              client-side wellness experience that respects your autonomy and empowers long-term vitality.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3 Pillars Grid -->
+        <div class="about-pillars-grid mb-4">
+          <div class="about-pillar-card glass-card">
+            <div class="pillar-icon">🔒</div>
+            <h4>100% Client-Side Privacy</h4>
+            <p class="text-sm text-muted">
+              Zero cloud tracking, zero data mining, and no account barriers. Your recipes, workout logs, habits, and
+              journal entries are securely stored in your device's browser localStorage.
+            </p>
+          </div>
+
+          <div class="about-pillar-card glass-card">
+            <div class="pillar-icon">🥗</div>
+            <h4>Whole-Food Nutrition Science</h4>
+            <p class="text-sm text-muted">
+              We focus on nutrient density, satiety hormones (PYY, GLP-1), adequate protein leverage, and prebiotic
+              fiber. No quick-fix gimmicks—just sustainable eating habits.
+            </p>
+          </div>
+
+          <div class="about-pillar-card glass-card">
+            <div class="pillar-icon">⚡</div>
+            <h4>Functional Daily Movement</h4>
+            <p class="text-sm text-muted">
+              From gentle desk decompression stretches to progressive bodyweight strength and metabolic circuits, our
+              routines build real-world resilience without expensive gym machinery.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive FAQ Accordion -->
+        <div class="faq-container glass-card">
+          <div class="faq-header">
+            <h3>Frequently Asked Questions</h3>
+            <p class="text-sm text-muted">Learn more about how NutriFit operates on your device.</p>
+          </div>
+
+          <div class="pillars-accordion" id="faq-accordion">
+            <div class="accordion-item active">
+              <button class="accordion-header" aria-expanded="true">
+                <span>🛡️ How is my wellness data stored without an account?</span>
+                <span class="acc-chevron">▾</span>
+              </button>
+              <div class="accordion-body">
+                <p>NutriFit utilizes HTML5 browser <code>localStorage</code>, an encrypted, isolated sandbox built
+                  directly into Google Chrome and modern browsers. Your data never touches a remote server or
+                  third-party database. You can export a full <code>.json</code> backup anytime via the Preferences
+                  menu.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header" aria-expanded="false">
+                <span>🧮 How are calorie and macronutrient targets calculated?</span>
+                <span class="acc-chevron">▾</span>
+              </button>
+              <div class="accordion-body">
+                <p>Our nutrition calculator utilizes the scientifically validated <strong>Mifflin-St Jeor
+                    equation</strong>, the gold standard used by registered dietitians globally, factoring in biological
+                  sex, age, height, weight, activity multipliers, and sustainable goal targets.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header" aria-expanded="false">
+                <span>🤖 What is the NutriFit Guide agent and does it use external AI?</span>
+                <span class="acc-chevron">▾</span>
+              </button>
+              <div class="accordion-body">
+                <p>NutriFit Guide is a 100% hardcoded, rule-based wellness companion written entirely in vanilla
+                  JavaScript. It does not use any external AI APIs, external servers, or API keys. It matches keywords
+                  and synonyms locally to recommend recipes, workouts, water reminders, and website guidance.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header" aria-expanded="false">
+                <span>📦 How do I transfer my saved data to another computer or browser?</span>
+                <span class="acc-chevron">▾</span>
+              </button>
+              <div class="accordion-body">
+                <p>Click on the gear icon or "User Preferences" in the footer, switch to the "Data Backup & Reset" tab,
+                  and click <strong>"Export Backup JSON"</strong>. You can then import that file onto any browser or
+                  device instantly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: CONTACT & SUPPORT -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-sub">Connect With Us</span>
+            <h2 class="section-title">Contact & Studio Feedback</h2>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-form-card glass-card">
+            <h3>Send a Message to Hazr Studios</h3>
+            <p class="text-sm text-muted mb-3">
+              Have feedback, a healthy recipe idea, or want to suggest new workouts? We would love to hear from you.
+            </p>
+
+            <form id="contact-form" class="contact-form">
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="contact-name">Your Name *</label>
+                  <input type="text" id="contact-name" class="form-control" placeholder="e.g. Jordan Lee" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email Address *</label>
+                  <input type="email" id="contact-email" class="form-control" placeholder="e.g. jordan@example.com"
+                    required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-topic">Inquiry Category</label>
+                <select id="contact-topic" class="form-select">
+                  <option value="feedback">General Wellness Feedback</option>
+                  <option value="recipe">Recipe Submission or Suggestion</option>
+                  <option value="workout">Workout Routine Idea</option>
+                  <option value="support">Technical Question / Bug Report</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Your Message *</label>
+                <textarea id="contact-message" class="form-control" rows="4"
+                  placeholder="How can Hazr Studios make your NutriFit wellness journey even better?"
+                  required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">Send Message to Hazr Studios</button>
+            </form>
+          </div>
+
+          <div class="contact-info-card glass-card">
+            <div class="studio-badge-box">
+              <div class="logo-icon-wrap mb-2">
+                <svg viewBox="0 0 24 24" class="logo-svg" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 3v18m0-18C7.5 3 4 6.5 4 11c0 6 8 10 8 10s8-4 8-10c0-4.5-3.5-8-8-8z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 11l2 2 4-4" />
+                </svg>
+              </div>
+              <h4>Hazr Studios</h4>
+              <p class="text-sm text-muted">Modern Digital Wellness & Craft Software</p>
+            </div>
+
+            <div class="studio-details-list">
+              <div class="detail-item">
+                <span class="detail-icon">🌿</span>
+                <div>
+                  <strong>NutriFit Platform</strong>
+                  <p class="text-xs text-muted">Eat Better. Move Better. Live Better.</p>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <span class="detail-icon">⚡</span>
+                <div>
+                  <strong>Pure Client-Side Engine</strong>
+                  <p class="text-xs text-muted">HTML5 • CSS3 • Vanilla ES6+ JavaScript</p>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <span class="detail-icon">💾</span>
+                <div>
+                  <strong>Local Storage Status</strong>
+                  <p class="text-xs text-muted">Active, Encrypted Browser Sandbox</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tip-badge mt-3">
+              <span>💡 Tip: Need instant guidance? Tap the <strong>Guide Agent</strong> button at the bottom-right
+                corner of your screen!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand-col">
+        <div class="brand-logo footer-logo">
+          <div class="logo-icon-wrap">
+            <svg viewBox="0 0 24 24" class="logo-svg" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 3v18m0-18C7.5 3 4 6.5 4 11c0 6 8 10 8 10s8-4 8-10c0-4.5-3.5-8-8-8z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 11l2 2 4-4" />
+            </svg>
+          </div>
+          <span class="brand-name">Nutri<span class="brand-accent">Fit</span></span>
+        </div>
+        <p class="footer-tagline"><strong>Eat Better. Move Better. Live Better.</strong></p>
+        <p class="footer-desc">
+          A modern, private wellness, nutrition, and home workout hub engineered with pure HTML5, CSS3, and JavaScript.
+          All personal data is securely stored within your browser's local sandbox.
+        </p>
+        <div class="footer-author-badge">
+          <span>Made with care by <strong>Hazr Studios</strong></span>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#recipes">Recipe Discovery</a></li>
+          <li><a href="#workouts">Workout Library</a></li>
+          <li><a href="#planner">Meal Planner</a></li>
+          <li><a href="#nutrition">BMR & Macro Calculator</a></li>
+          <li><a href="#journal">Habits & Sleep Journal</a></li>
+          <li><a href="#blog">Articles & Guides</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Data & Privacy</h4>
+        <ul class="footer-links">
+          <li><a href="javascript:void(0)" id="footer-preferences-link">User Preferences</a></li>
+          <li><a href="javascript:void(0)" id="footer-export-link">Export Backup JSON</a></li>
+          <li><a href="javascript:void(0)" id="footer-import-link">Import Backup Data</a></li>
+          <li><a href="javascript:void(0)" id="footer-reset-link" class="text-danger">Reset All Local Data</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-disclaimer-col">
+        <h4 class="footer-col-title">Wellness Disclaimer</h4>
+        <p class="footer-disclaimer-text">
+          NutriFit content and calculators are designed for educational, healthy habit tracking, and fitness inspiration
+          only. They do not constitute personalized medical advice, diagnosis, or clinical prescriptions. Always consult
+          a certified healthcare professional before starting an intense exercise regimen or making major dietary
+          changes.
+        </p>
+        <div class="footer-storage-badge">
+          <span class="storage-dot"></span>
+          <span>Local Storage: Active & Synchronized</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p>&copy; <span id="current-year">2026</span> NutriFit. Crafted with excellence by <strong>Hazr
+            Studios</strong>. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <span>HTML5 • Vanilla CSS3 • Modern ES6+</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!-- MODALS SECTION -->
+  <!-- ============================================== -->
+
+  <!-- 1. RECIPE DETAIL MODAL -->
+  <div class="modal-backdrop" id="recipe-modal" aria-hidden="true" role="dialog" aria-labelledby="recipe-modal-title">
+    <div class="modal-dialog modal-lg">
+      <button class="modal-close-btn" id="recipe-modal-close" aria-label="Close recipe details">&times;</button>
+      <div class="recipe-modal-body" id="recipe-modal-content">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. CUSTOM RECIPE CREATOR MODAL -->
+  <div class="modal-backdrop" id="custom-recipe-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-md">
+      <button class="modal-close-btn" id="custom-recipe-close">&times;</button>
+      <div class="modal-header">
+        <h3 id="custom-recipe-modal-title">Create Custom Healthy Recipe</h3>
+        <p class="text-sm text-muted">Add your personal favorite recipe to your library and meal planner.</p>
+      </div>
+      <form id="custom-recipe-form" class="modal-form">
+        <input type="hidden" id="custom-recipe-edit-id" value="">
+        <div class="form-group">
+          <label for="cr-title">Recipe Title *</label>
+          <input type="text" id="cr-title" class="form-control" placeholder="e.g. Avocado Toast with Poached Eggs"
+            required>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="cr-category">Category *</label>
+            <select id="cr-category" class="form-select" required>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="snack">Snack</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cr-time">Prep Time (mins) *</label>
+            <input type="number" id="cr-time" class="form-control" placeholder="e.g. 15" min="1" max="180" required>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="cr-servings">Default Servings *</label>
+            <input type="number" id="cr-servings" class="form-control" value="2" min="1" max="20" required>
+          </div>
+          <div class="form-group">
+            <label for="cr-calories">Calories per serving (kcal) *</label>
+            <input type="number" id="cr-calories" class="form-control" placeholder="e.g. 380" min="10" max="2000"
+              required>
+          </div>
+        </div>
+
+        <div class="form-row-3">
+          <div class="form-group">
+            <label for="cr-protein">Protein (g)</label>
+            <input type="number" id="cr-protein" class="form-control" placeholder="24" min="0">
+          </div>
+          <div class="form-group">
+            <label for="cr-carbs">Carbs (g)</label>
+            <input type="number" id="cr-carbs" class="form-control" placeholder="32" min="0">
+          </div>
+          <div class="form-group">
+            <label for="cr-fat">Fat (g)</label>
+            <input type="number" id="cr-fat" class="form-control" placeholder="12" min="0">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cr-dietary">Dietary Tags (comma separated)</label>
+          <input type="text" id="cr-dietary" class="form-control" placeholder="High-Protein, Vegetarian, Gluten-Free">
+        </div>
+
+        <div class="form-group">
+          <label for="cr-ingredients">Ingredients (One per line with quantity) *</label>
+          <textarea id="cr-ingredients" class="form-control" rows="4"
+            placeholder="2 slices whole grain sourdough&#10;1 ripe Hass avocado&#10;2 pasture-raised eggs&#10;1 pinch chili flakes"
+            required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="cr-instructions">Preparation Steps (One per line) *</label>
+          <textarea id="cr-instructions" class="form-control" rows="4"
+            placeholder="Toast bread to golden brown.&#10;Mash avocado with lemon juice and salt.&#10;Poach eggs in simmering water for 3 minutes.&#10;Top toast and garnish with chili flakes."
+            required></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancel-custom-recipe-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="save-custom-recipe-btn">Save to Recipe Library</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. WORKOUT DETAIL & ACTIVE TIMER MODAL -->
+  <div class="modal-backdrop" id="workout-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <button class="modal-close-btn" id="workout-modal-close">&times;</button>
+      <div class="workout-modal-body" id="workout-modal-content">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. CUSTOM WORKOUT CREATOR MODAL -->
+  <div class="modal-backdrop" id="custom-workout-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-md">
+      <button class="modal-close-btn" id="custom-workout-close">&times;</button>
+      <div class="modal-header">
+        <h3 id="custom-workout-modal-title">Create Custom Workout Routine</h3>
+        <p class="text-sm text-muted">Design a tailored training routine with your preferred movements.</p>
+      </div>
+      <form id="custom-workout-form" class="modal-form">
+        <input type="hidden" id="custom-workout-edit-id" value="">
+        <div class="form-group">
+          <label for="cw-title">Routine Title *</label>
+          <input type="text" id="cw-title" class="form-control" placeholder="e.g. Upper Body Strength & Mobility"
+            required>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="cw-category">Category *</label>
+            <select id="cw-category" class="form-select" required>
+              <option value="strength">Strength</option>
+              <option value="hiit">HIIT & Cardio</option>
+              <option value="mobility">Mobility & Stretch</option>
+              <option value="home">Home / Bodyweight</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cw-difficulty">Difficulty *</label>
+            <select id="cw-difficulty" class="form-select" required>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="cw-duration">Duration (mins) *</label>
+            <input type="number" id="cw-duration" class="form-control" value="25" min="5" max="120" required>
+          </div>
+          <div class="form-group">
+            <label for="cw-calories">Est. Calories Burned (kcal)</label>
+            <input type="number" id="cw-calories" class="form-control" value="180" min="20" max="1000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cw-equipment">Equipment Needed</label>
+          <input type="text" id="cw-equipment" class="form-control" placeholder="e.g. Yoga Mat, Light Dumbbells, None">
+        </div>
+
+        <div class="form-group">
+          <label for="cw-exercises">Exercises (Format: Name | Duration/Reps | Rest, e.g. Goblet Squats | 12 reps | 45s
+            rest) *</label>
+          <textarea id="cw-exercises" class="form-control" rows="5"
+            placeholder="Bodyweight Squats | 15 reps | 30s rest&#10;Push-ups | 10 reps | 45s rest&#10;Plank Hold | 45 secs | 30s rest&#10;Glute Bridges | 15 reps | 30s rest"
+            required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="cw-notes">Safety & Form Notes</label>
+          <textarea id="cw-notes" class="form-control" rows="2"
+            placeholder="Keep spine neutral and control the eccentric movement."></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancel-custom-workout-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="save-custom-workout-btn">Save Routine</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 5. ADD MEAL TO PLANNER MODAL -->
+  <div class="modal-backdrop" id="add-meal-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-md">
+      <button class="modal-close-btn" id="add-meal-close">&times;</button>
+      <div class="modal-header">
+        <h3 id="add-meal-modal-title">Add Meal to Plan</h3>
+        <p class="text-sm text-muted" id="add-meal-slot-desc">Assign a meal to your schedule.</p>
+      </div>
+
+      <div class="add-meal-tabs">
+        <button class="btn btn-sm btn-outline active" id="tab-choose-recipe">Choose from Recipe Library</button>
+        <button class="btn btn-sm btn-outline" id="tab-custom-meal">Quick Custom Meal</button>
+      </div>
+
+      <!-- Option A: Choose from existing recipes -->
+      <div id="choose-recipe-panel" class="add-meal-panel">
+        <div class="search-input-wrap mb-3">
+          <input type="search" id="planner-recipe-search" class="search-input search-sm"
+            placeholder="Search recipe library...">
+        </div>
+        <div class="planner-recipe-picker-list" id="planner-recipe-picker-list">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+
+      <!-- Option B: Quick Custom Meal Form -->
+      <form id="quick-meal-form" class="add-meal-panel modal-form" style="display: none;">
+        <div class="form-group">
+          <label for="qm-name">Meal Name *</label>
+          <input type="text" id="qm-name" class="form-control" placeholder="e.g. Grilled Chicken & Quinoa Bowl"
+            required>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="qm-calories">Estimated Calories (kcal) *</label>
+            <input type="number" id="qm-calories" class="form-control" placeholder="e.g. 520" required>
+          </div>
+          <div class="form-group">
+            <label for="qm-protein">Protein (g)</label>
+            <input type="number" id="qm-protein" class="form-control" placeholder="38">
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="qm-carbs">Carbs (g)</label>
+            <input type="number" id="qm-carbs" class="form-control" placeholder="45">
+          </div>
+          <div class="form-group">
+            <label for="qm-fat">Fat (g)</label>
+            <input type="number" id="qm-fat" class="form-control" placeholder="15">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full mt-2">Add Custom Meal to Plan</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. DUPLICATE DAY MEAL MODAL -->
+  <div class="modal-backdrop" id="duplicate-day-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <button class="modal-close-btn" id="duplicate-modal-close">&times;</button>
+      <div class="modal-header">
+        <h3>Copy Day's Meal Plan</h3>
+        <p class="text-sm text-muted">Duplicate all planned meals from <strong id="copy-from-day-text">Monday</strong>
+          to another day.</p>
+      </div>
+      <div class="form-group">
+        <label for="copy-target-day-select">Copy to which day?</label>
+        <select id="copy-target-day-select" class="form-select">
+          <option value="monday">Monday</option>
+          <option value="tuesday">Tuesday</option>
+          <option value="wednesday">Wednesday</option>
+          <option value="thursday">Thursday</option>
+          <option value="friday">Friday</option>
+          <option value="saturday">Saturday</option>
+          <option value="sunday">Sunday</option>
+        </select>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="cancel-copy-day-btn">Cancel</button>
+        <button class="btn btn-primary" id="confirm-copy-day-btn">Duplicate Plan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. ARTICLE READER MODAL -->
+  <div class="modal-backdrop" id="article-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <button class="modal-close-btn" id="article-modal-close">&times;</button>
+      <div class="article-modal-body" id="article-modal-content">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. SETTINGS & LOCAL STORAGE MANAGEMENT MODAL -->
+  <div class="modal-backdrop" id="settings-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-md">
+      <button class="modal-close-btn" id="settings-modal-close">&times;</button>
+      <div class="modal-header">
+        <h3>Preferences & Data Management</h3>
+        <p class="text-sm text-muted">NutriFit by Hazr Studios • Local & Private</p>
+      </div>
+
+      <div class="settings-tabs">
+        <button class="settings-tab-btn active" data-stab="profile">Profile & Goals</button>
+        <button class="settings-tab-btn" data-stab="dashboard">Dashboard Layout</button>
+        <button class="settings-tab-btn" data-stab="storage">Data & Privacy</button>
+      </div>
+
+      <!-- Tab 1: Profile & Goals -->
+      <div id="settings-profile-tab" class="settings-tab-pane active">
+        <form id="settings-profile-form" class="modal-form">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="set-name">Your Display Name</label>
+              <input type="text" id="set-name" class="form-control" placeholder="e.g. Alex Rivera">
+            </div>
+            <div class="form-group">
+              <label for="set-age">Age (Optional)</label>
+              <input type="number" id="set-age" class="form-control" placeholder="e.g. 28" min="10" max="120">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="set-water-goal">Daily Water Goal (ml)</label>
+              <input type="number" id="set-water-goal" class="form-control" value="2500" min="1000" max="6000"
+                step="100">
+            </div>
+            <div class="form-group">
+              <label for="set-calorie-target">Daily Calorie Target (kcal)</label>
+              <input type="number" id="set-calorie-target" class="form-control" value="2000" min="1000" max="5000"
+                step="50">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="set-dietary-pref">Dietary Preference</label>
+            <select id="set-dietary-pref" class="form-select">
+              <option value="none">Standard / Omnivore (No restrictions)</option>
+              <option value="high-protein">High-Protein Athlete</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan / Plant-Based</option>
+              <option value="gluten-free">Gluten-Free</option>
+              <option value="low-carb">Low-Carb / Keto Friendly</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="set-fitness-level">Workout Experience Level</label>
+            <select id="set-fitness-level" class="form-select">
+              <option value="beginner">Beginner (Foundational movement & mobility)</option>
+              <option value="intermediate" selected>Intermediate (Consistent 3–4 days/week)</option>
+              <option value="advanced">Advanced (Structured progressive overload)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Personal Wellness Goals</label>
+            <div class="goals-selection-grid" id="set-goals-grid">
+              <label class="goal-select-pill">
+                <input type="checkbox" name="set-goal" value="Build Lean Muscle">
+                <span>💪 Build Lean Muscle</span>
+              </label>
+              <label class="goal-select-pill">
+                <input type="checkbox" name="set-goal" value="Improve Hydration">
+                <span>💧 Improve Hydration</span>
+              </label>
+              <label class="goal-select-pill">
+                <input type="checkbox" name="set-goal" value="Fat Loss & Tone">
+                <span>🔥 Fat Loss & Tone</span>
+              </label>
+              <label class="goal-select-pill">
+                <input type="checkbox" name="set-goal" value="Consistent Sleep">
+                <span>🌙 Consistent 8h Sleep</span>
+              </label>
+              <label class="goal-select-pill">
+                <input type="checkbox" name="set-goal" value="Mobility & Joints">
+                <span>🧘 Joint Mobility</span>
+              </label>
+              <label class="goal-select-pill">
+                <input type="checkbox" name="set-goal" value="Daily Mindful Energy">
+                <span>✨ Mindful Energy</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="set-allergies">Allergies / Exclusions (comma-separated)</label>
+            <input type="text" id="set-allergies" class="form-control" placeholder="e.g. Peanuts, Shellfish, Dairy">
+          </div>
+
+          <div class="form-group">
+            <label for="set-theme">Color Theme</label>
+            <select id="set-theme" class="form-select">
+              <option value="light">Light Wellness (Fresh greens & neutrals)</option>
+              <option value="dark">Dark Luxe (Sleek slate & emerald accents)</option>
+              <option value="system">Follow System Preference</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full mt-3">Save Profile & Preferences</button>
+        </form>
+      </div>
+
+      <!-- Tab 2: Dashboard Layout Customization -->
+      <div id="settings-dashboard-tab" class="settings-tab-pane">
+        <div class="storage-info-box mb-3">
+          <div class="storage-info-header">
+            <span class="storage-icon">🎛️</span>
+            <div>
+              <strong>Dashboard Widgets</strong>
+              <p class="text-sm text-muted">Customize which cards and progress rings appear on your Home Dashboard.</p>
+            </div>
+          </div>
+        </div>
+
+        <form id="settings-dashboard-form" class="modal-form">
+          <div class="dash-widget-toggles-grid">
+            <label class="dash-toggle-row">
+              <input type="checkbox" id="set-dash-water" class="dash-pref-check" checked>
+              <span class="dash-toggle-label">💧 Hydration Glass Tracker</span>
+            </label>
+            <label class="dash-toggle-row">
+              <input type="checkbox" id="set-dash-habits" class="dash-pref-check" checked>
+              <span class="dash-toggle-label">✨ Daily Habits & Rituals</span>
+            </label>
+            <label class="dash-toggle-row">
+              <input type="checkbox" id="set-dash-cals" class="dash-pref-check" checked>
+              <span class="dash-toggle-label">🔥 Calorie & Macro Target Card</span>
+            </label>
+            <label class="dash-toggle-row">
+              <input type="checkbox" id="set-dash-workout" class="dash-pref-check" checked>
+              <span class="dash-toggle-label">🏋️ Daily Workout Quick-Start</span>
+            </label>
+            <label class="dash-toggle-row">
+              <input type="checkbox" id="set-dash-meals" class="dash-pref-check" checked>
+              <span class="dash-toggle-label">🥗 Today's Planned Meals</span>
+            </label>
+            <label class="dash-toggle-row">
+              <input type="checkbox" id="set-dash-chart" class="dash-pref-check" checked>
+              <span class="dash-toggle-label">📊 7-Day Activity Trends Canvas</span>
+            </label>
+            <label class="dash-toggle-row">
+              <input type="checkbox" id="set-dash-badges" class="dash-pref-check" checked>
+              <span class="dash-toggle-label">🏆 Milestone Achievement Badges</span>
+            </label>
+          </div>
+
+          <div class="modal-actions mt-4">
+            <button type="button" class="btn btn-outline" id="reset-dash-layout-btn">Reset to Default</button>
+            <button type="submit" class="btn btn-primary">Apply Dashboard Layout</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Tab 3: Storage Backup, Import & Reset -->
+      <div id="settings-storage-tab" class="settings-tab-pane">
+        <div class="storage-info-box">
+          <div class="storage-info-header">
+            <span class="storage-icon">💾</span>
+            <div>
+              <strong>Local Browser Storage</strong>
+              <p class="text-sm text-muted">All your recipes, workout records, meal plans, water logs, and habits are
+                stored exclusively on this device.</p>
+            </div>
+          </div>
+          <div class="storage-meta-summary mt-2">
+            <div class="smeta-item">
+              <span class="smeta-lbl">Last Saved:</span>
+              <strong class="smeta-val" id="settings-last-saved-time">Just now</strong>
+            </div>
+            <div class="smeta-item">
+              <span class="smeta-lbl">Storage Usage:</span>
+              <strong class="smeta-val" id="settings-storage-size">~38 KB</strong>
+            </div>
+            <div class="smeta-item">
+              <span class="smeta-lbl">Schema:</span>
+              <strong class="smeta-val">v2.1.0 Namespaced</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="backup-actions-grid mt-3">
+          <div class="backup-action-card">
+            <h4>Export Data Backup</h4>
+            <p class="text-xs text-muted mb-2">Download a `.json` snapshot of all your NutriFit settings, history, and
+              recipes.</p>
+            <button class="btn btn-sm btn-outline btn-full" id="export-json-btn">⬇️ Export Backup JSON</button>
+          </div>
+
+          <div class="backup-action-card">
+            <h4>Import Data Backup</h4>
+            <p class="text-xs text-muted mb-2">Restore data from a previously downloaded `.json` backup file.</p>
+
+            <div class="import-mode-options mb-2">
+              <label class="import-radio-label">
+                <input type="radio" name="import-mode" value="merge" checked>
+                <span>Merge (Keep existing & add new)</span>
+              </label>
+              <label class="import-radio-label">
+                <input type="radio" name="import-mode" value="replace">
+                <span>Replace (Complete clean restore)</span>
+              </label>
+            </div>
+
+            <label class="btn btn-sm btn-outline btn-full btn-file-label">
+              ⬆️ Select JSON Backup File
+              <input type="file" id="import-json-file" accept=".json" style="display: none;">
+            </label>
+          </div>
+        </div>
+
+        <!-- Section-Specific Reset -->
+        <div class="section-reset-card mt-3">
+          <h4>Granular Section Reset</h4>
+          <p class="text-xs text-muted mb-2">Reset only a specific feature without losing your other data.</p>
+          <div class="form-row-2">
+            <select id="granular-reset-select" class="form-select">
+              <option value="water">💧 Hydration Intake Logs</option>
+              <option value="planner">📋 Meal Plans & Shopping List</option>
+              <option value="habits">✨ Daily Habits & Ritual Logs</option>
+              <option value="journal">📖 Wellness Journal Entries</option>
+              <option value="workouts">🏋️ Completed Workout History</option>
+              <option value="guide">💬 NutriFit Guide Chat History</option>
+            </select>
+            <button type="button" class="btn btn-sm btn-outline" id="granular-reset-btn">Reset Selected</button>
+          </div>
+        </div>
+
+        <div class="danger-zone mt-4">
+          <h4 class="text-danger">Danger Zone</h4>
+          <p class="text-xs text-muted mb-2">Clear all saved NutriFit data and restore original factory defaults.</p>
+          <button class="btn btn-sm btn-danger btn-full" id="reset-all-data-btn">⚠️ Reset All NutriFit Data</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. FIRST-TIME ONBOARDING MODAL -->
+  <div class="modal-backdrop" id="onboarding-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="onboarding-header">
+        <div class="logo-icon-wrap lg">
+          <svg viewBox="0 0 24 24" class="logo-svg" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 3v18m0-18C7.5 3 4 6.5 4 11c0 6 8 10 8 10s8-4 8-10c0-4.5-3.5-8-8-8z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 11l2 2 4-4" />
+          </svg>
+        </div>
+        <h2>Welcome to NutriFit</h2>
+        <p class="text-muted">Eat Better. Move Better. Live Better. By Hazr Studios.</p>
+      </div>
+
+      <div class="onboarding-steps-indicator">
+        <span class="step-dot active" id="ob-step-dot-1"></span>
+        <span class="step-dot" id="ob-step-dot-2"></span>
+        <span class="step-dot" id="ob-step-dot-3"></span>
+      </div>
+
+      <!-- Step 1: Name, Age & Dietary -->
+      <div class="onboarding-step-pane active" id="ob-pane-1">
+        <h4>Step 1: Your Wellness Profile</h4>
+        <p class="text-sm text-muted mb-3">Help us personalize your recipe and workout recommendations.</p>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="ob-name">What should we call you?</label>
+            <input type="text" id="ob-name" class="form-control" placeholder="Your name (e.g. Jordan)"
+              value="Wellness Explorer">
+          </div>
+          <div class="form-group">
+            <label for="ob-age">Age (Optional)</label>
+            <input type="number" id="ob-age" class="form-control" placeholder="e.g. 28" min="10" max="120">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ob-dietary">Dietary Focus</label>
+          <select id="ob-dietary" class="form-select">
+            <option value="none">Balanced / Omnivore</option>
+            <option value="high-protein">High-Protein Fitness</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan / Plant-Based</option>
+            <option value="gluten-free">Gluten-Free</option>
+            <option value="low-carb">Low-Carb / Keto</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-ghost" onclick="skipOnboarding()">Skip Setup</button>
+          <button class="btn btn-primary" onclick="goToOnboardingStep(2)">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Fitness Level, Goals & Hydration -->
+      <div class="onboarding-step-pane" id="ob-pane-2" style="display: none;">
+        <h4>Step 2: Activity, Goals & Hydration</h4>
+        <p class="text-sm text-muted mb-3">Set your daily hydration goal, fitness level, and wellness targets.</p>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="ob-water">Daily Water Goal (ml)</label>
+            <input type="number" id="ob-water" class="form-control" value="2500" step="250" min="1000" max="5000">
+          </div>
+          <div class="form-group">
+            <label for="ob-fitness">Fitness Level</label>
+            <select id="ob-fitness" class="form-select">
+              <option value="beginner">Beginner (Building foundational movement)</option>
+              <option value="intermediate" selected>Intermediate (Consistent 3–4 days/week)</option>
+              <option value="advanced">Advanced (Structured intensity training)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Primary Wellness Goals</label>
+          <div class="goals-selection-grid">
+            <label class="goal-select-pill">
+              <input type="checkbox" name="ob-goal" value="Build Lean Muscle" checked>
+              <span>💪 Build Muscle</span>
+            </label>
+            <label class="goal-select-pill">
+              <input type="checkbox" name="ob-goal" value="Improve Hydration" checked>
+              <span>💧 Hydration</span>
+            </label>
+            <label class="goal-select-pill">
+              <input type="checkbox" name="ob-goal" value="Consistent Sleep" checked>
+              <span>🌙 Better Sleep</span>
+            </label>
+            <label class="goal-select-pill">
+              <input type="checkbox" name="ob-goal" value="Fat Loss & Tone">
+              <span>🔥 Fat Loss</span>
+            </label>
+            <label class="goal-select-pill">
+              <input type="checkbox" name="ob-goal" value="Daily Mindful Energy">
+              <span>✨ Daily Energy</span>
+            </label>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-outline" onclick="goToOnboardingStep(1)">&larr; Back</button>
+          <button class="btn btn-primary" onclick="goToOnboardingStep(3)">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Privacy & Finish -->
+      <div class="onboarding-step-pane" id="ob-pane-3" style="display: none;">
+        <h4>Step 3: Private & Offline Ready</h4>
+        <div class="privacy-bullet-card">
+          <div class="privacy-bullet">
+            <span class="p-icon">🔒</span>
+            <div>
+              <strong>100% Client-Side Privacy</strong>
+              <p class="text-xs text-muted">No accounts, no external tracking, no cloud servers. Everything is saved
+                safely in your browser's localStorage.</p>
+            </div>
+          </div>
+          <div class="privacy-bullet mt-2">
+            <span class="p-icon">⚡</span>
+            <div>
+              <strong>Instant Performance</strong>
+              <p class="text-xs text-muted">Runs seamlessly offline directly in Chrome or any modern browser.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-actions mt-4">
+          <button class="btn btn-outline" onclick="goToOnboardingStep(2)">&larr; Back</button>
+          <button class="btn btn-primary" onclick="finishOnboarding()">Enter NutriFit &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. GENERIC CONFIRMATION DIALOG MODAL -->
+  <div class="modal-backdrop" id="confirm-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-header">
+        <h3 id="confirm-modal-title">Please Confirm</h3>
+        <p class="text-sm text-muted" id="confirm-modal-message">Are you sure you want to perform this action?</p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="confirm-cancel-btn">Cancel</button>
+        <button class="btn btn-danger" id="confirm-action-btn">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. WORKOUT HISTORY LOG MODAL -->
+  <div class="modal-backdrop" id="workout-history-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-md">
+      <button class="modal-close-btn" id="workout-history-close">&times;</button>
+      <div class="modal-header">
+        <h3>Completed Workout History</h3>
+        <p class="text-sm text-muted">Your logged training sessions and calorie burn records.</p>
+      </div>
+      <div class="workout-history-list" id="workout-history-container">
+        <!-- Rendered via JS -->
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-sm btn-ghost text-danger" id="clear-workout-history-btn">Clear History</button>
+        <button class="btn btn-sm btn-primary" id="close-history-modal-btn">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. CUSTOM HABIT MODAL -->
+  <div class="modal-backdrop" id="custom-habit-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <button class="modal-close-btn" id="custom-habit-close">&times;</button>
+      <div class="modal-header">
+        <h3>Add Custom Habit</h3>
+        <p class="text-sm text-muted">Build a personalized daily wellness routine.</p>
+      </div>
+      <form id="custom-habit-form" class="modal-form">
+        <div class="form-group">
+          <label for="habit-name-input">Habit Name *</label>
+          <input type="text" id="habit-name-input" class="form-control" placeholder="e.g. 10-Minute Sun Walk" required>
+        </div>
+        <div class="form-group">
+          <label for="habit-icon-input">Habit Emoji Icon</label>
+          <input type="text" id="habit-icon-input" class="form-control" value="🌟" maxlength="4">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancel-habit-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Add Habit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 13. QUICK ACTIVITY LOG MODAL -->
+  <div class="modal-backdrop" id="activity-log-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-md">
+      <button class="modal-close-btn" id="activity-modal-close">&times;</button>
+      <div class="modal-header">
+        <h3>Log Daily Activity & Movement</h3>
+        <p class="text-sm text-muted">Record workouts, outdoor walks, runs, or sporting sessions.</p>
+      </div>
+      <form id="activity-log-form" class="modal-form">
+        <div class="form-group">
+          <label for="act-type">Activity Type *</label>
+          <select id="act-type" class="form-select" required>
+            <option value="Brisk Walking">Brisk Walking 🚶</option>
+            <option value="Outdoor Running">Outdoor Running 🏃</option>
+            <option value="Cycling">Cycling / Bike Ride 🚴</option>
+            <option value="Strength Training">Strength & Weight Training 🏋️</option>
+            <option value="HIIT Circuit">High Intensity Interval Training ⚡</option>
+            <option value="Yoga & Mobility">Yoga & Mobility Flow 🧘</option>
+            <option value="Swimming">Swimming 🏊</option>
+            <option value="Home Calisthenics">Home Bodyweight Workout 🤸</option>
+          </select>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="act-duration">Duration (minutes) *</label>
+            <input type="number" id="act-duration" class="form-control" value="30" min="1" max="360" required>
+          </div>
+          <div class="form-group">
+            <label for="act-calories">Estimated Calories Burned *</label>
+            <input type="number" id="act-calories" class="form-control" value="160" min="0" max="3000" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="act-steps">Steps Count (Optional)</label>
+          <input type="number" id="act-steps" class="form-control" placeholder="e.g. 4200" min="0">
+        </div>
+
+        <div class="form-group">
+          <label for="act-notes">Notes & Reflection</label>
+          <input type="text" id="act-notes" class="form-control" placeholder="e.g. Felt energized, brisk morning tempo">
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancel-activity-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Activity</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 14. INBUILT NUTRIFIT GUIDE AGENT (FLOATING CHATBOT WIDGET) -->
+  <div class="guide-floating-container" id="guide-floating-container">
+    <!-- Floating Trigger Button -->
+    <button class="guide-floating-btn" id="guide-floating-btn" aria-label="Open NutriFit Guide Chat Assistant"
+      title="Chat with NutriFit Guide">
+      <span class="guide-avatar-icon">💬</span>
+      <span class="guide-btn-label">NutriFit Guide</span>
+      <span class="guide-pulse-ring"></span>
+    </button>
+
+    <!-- Floating Chat Window Card -->
+    <div class="guide-chat-widget glass-card" id="guide-chat-widget" aria-hidden="true" style="display: none;">
+      <!-- Chat Header -->
+      <div class="guide-chat-header">
+        <div class="guide-header-info">
+          <div class="guide-avatar-wrap">
+            <span>🌿</span>
+          </div>
+          <div>
+            <div class="guide-agent-title">NutriFit Guide</div>
+            <div class="guide-agent-sub">
+              <span class="online-indicator"></span> Built-in Wellness Companion • Hazr Studios
+            </div>
+          </div>
+        </div>
+        <div class="guide-header-actions">
+          <button class="icon-btn-sm" id="clear-guide-chat-btn" title="Clear chat history">🗑️</button>
+          <button class="icon-btn-sm" id="close-guide-chat-btn" title="Close Guide chat">&times;</button>
+        </div>
+      </div>
+
+      <!-- Chat Disclaimer Bar -->
+      <div class="guide-disclaimer-bar">
+        <span>ℹ️ Built-in rule-based companion. 100% on-device & private. Not medical advice.</span>
+      </div>
+
+      <!-- Messages Scroll Area -->
+      <div class="guide-messages-area" id="guide-messages-list">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+      <!-- Typing Indicator -->
+      <div class="guide-typing-indicator" id="guide-typing-indicator" style="display: none;">
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-text">Guide is thinking...</span>
+      </div>
+
+      <!-- Quick Suggestion Prompt Chips -->
+      <div class="guide-quick-pills-bar" id="guide-quick-pills">
+        <button class="quick-prompt-pill" data-prompt="Suggest a healthy meal">🥗 Suggest a meal</button>
+        <button class="quick-prompt-pill" data-prompt="Find a beginner workout">🏋️ Beginner workout</button>
+        <button class="quick-prompt-pill" data-prompt="Help me plan my week">📋 Meal planner help</button>
+        <button class="quick-prompt-pill" data-prompt="How do I log water?">💧 Water tracker</button>
+        <button class="quick-prompt-pill" data-prompt="Calculate my calories & macros">🧮 Compute macros</button>
+        <button class="quick-prompt-pill" data-prompt="How to track habits?">✨ Daily habits</button>
+      </div>
+
+      <!-- Input Form -->
+      <form id="guide-chat-form" class="guide-chat-form">
+        <input type="text" id="guide-chat-input" class="guide-chat-input"
+          placeholder="Ask about recipes, workouts, water, meal plans..." autocomplete="off" required>
+        <button type="submit" class="guide-send-btn" id="guide-send-btn" aria-label="Send message">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="script.js"></script>
+</body>
+
+</html>
